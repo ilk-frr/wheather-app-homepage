@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weather App Homepage</title>
+    <style>
+        /* 1. Page Background Properties */
+        body {
+            background-color: #0f172a; /* background-color */
+            background-image: radial-gradient(circle at 15% 20%, rgba(56, 189, 248, 0.15) 0%, transparent 40%),
+                              radial-gradient(circle at 85% 80%, rgba(129, 140, 248, 0.15) 0%, transparent 40%); /* background-image (radial-gradient sky pattern) */
+            background-repeat: no-repeat; /* background-repeat */
+            background-position: center; /* background-position */
+            background-attachment: fixed; /* background-attachment */
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        .dashboard {
+            width: 100%;
+            max-width: 550px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* 2. Main Weather Card with linear-gradient */
+        .weather-card {
+            background-image: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); /* linear-gradient */
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .weather-info h2 {
+            margin: 0 0 0.4rem 0;
+            font-size: 1.8rem;
+        }
+
+        .temp {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* 3. CSS Animation and @keyframes for floating icon */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating-icon {
+            font-size: 4rem;
+            animation: float 3s ease-in-out infinite; /* animation property */
+        }
+
+        /* 4. Forecast Section with radial-gradient */
+        .forecast-section {
+            background-image: radial-gradient(circle, #1e293b 0%, #0f172a 100%); /* radial-gradient */
+            border: 1px solid #334155;
+            padding: 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .forecast-section h3 {
+            margin-top: 0;
+            color: #38bdf8;
+        }
+
+        .forecast-days {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .day-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            flex: 1;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SkyPulse Weather</h1>
+        <p>Your Live Meteorological Dashboard</p>
+    </header>
+
+    <div class="dashboard">
+        <!-- Main Weather Card -->
+        <div class="weather-card">
+            <div class="weather-info">
+                <h2>Punjab, India</h2>
+                <p>Partly Cloudy</p>
+                <p class="temp">28°C</p>
+            </div>
+            <div class="floating-icon">🌤️</div>
+        </div>
+
+ 
+        <!-- Weekly Forecast Section -->
+        <section class="forecast-section">
+            <h3>3-Day Forecast</h3>
+            <div class="forecast-days">
+                <div class="day-card">
+                    <p>Sat</p>
+                    <p><strong>27°C</strong></p>
+                </div>
+                <div class="day-card">
+                    <p>Sun</p>
+                    <p><strong>26°C</strong></p>
+                </div>
+                <div class="day-card">
+                    <p>Mon</p>
+                    <p><strong>29°C</strong></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Weather App Homepage Assignment</p>
+    </footer>
+
+</body>
+</html>
